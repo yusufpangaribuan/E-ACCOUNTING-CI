@@ -9,10 +9,10 @@
 * PHP 5.6+.
 * Postgresql
 
-### Run 
+## Run 
 - php -S 127.0.0.1:{port}
 
-### Configuration
+## Configuration
 
 Create .env according your environment by copy file .env.example for database configuration and the other configuration. Example : .env.development, .env.testing, .env.production
 | Key | Type | Default | Required | Description |	
