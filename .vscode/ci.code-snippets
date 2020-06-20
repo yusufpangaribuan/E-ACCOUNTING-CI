@@ -1,0 +1,79 @@
+{
+    "Generate Controller": {
+        "scope": "html",
+        "prefix": "con",
+        "body": [
+            "<?php",
+            "",
+            "",
+            "",
+            "class ${1:ControllerName} extends CI_Controller {",
+            "",
+            "",
+            "   public function __construct() {",
+            "       parent::__construct();",
+            "   }",
+            "}",
+            "?>",
+        ],
+        "description": "Show PHP Errors"
+    },
+    "Generate Model": {
+        "scope": "html",
+        "prefix": "mon",
+        "body": [
+            "<?php",
+            "",
+            "",
+            "",
+            "class ${1:ModelName} extends CI_Model {",
+            "",
+            "",
+            "   public function __construct() {",
+            "       parent::__construct();",
+            "   }",
+            "}",
+            "?>",
+        ],
+        "description": "Show PHP Errors"
+    },
+    "Generate public Function": {
+        "scope": "php",
+        "prefix": "pb",
+        "body": [
+            "public function ${1:FunctionName}() {",
+            "   ",
+            "}",
+        ]
+    },
+    "Generate private Function": {
+        "scope": "php",
+        "prefix": "pv",
+        "body": [
+            "private function ${1:FunctionName}() {",
+            "   ",
+            "}",
+        ]
+    },
+    "Generate Load Model": {
+        "scope": "php",
+        "prefix": "lm",
+        "body": [
+            "\\$this->load->model('${1:ModelName}');"
+        ]
+    },
+    "Generate Load View": {
+        "scope": "php",
+        "prefix": "lv",
+        "body": [
+            "\\$this->load->view('${1:ViewName}');"
+        ]
+    },
+    "Generate Load Library": {
+        "scope": "php",
+        "prefix": "lb",
+        "body": [
+            "\\$this->load->library('${1:LibraryName}');"
+        ]
+    }
+}
