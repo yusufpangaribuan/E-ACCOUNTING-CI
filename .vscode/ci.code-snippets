@@ -20,7 +20,7 @@
     },
     "Generate Model": {
         "scope": "html",
-        "prefix": "mon",
+        "prefix": "mod",
         "body": [
             "<?php",
             "",
@@ -39,7 +39,7 @@
     },
     "Generate public Function": {
         "scope": "php",
-        "prefix": "pb",
+        "prefix": "pub",
         "body": [
             "public function ${1:FunctionName}() {",
             "   ",
@@ -48,7 +48,7 @@
     },
     "Generate private Function": {
         "scope": "php",
-        "prefix": "pv",
+        "prefix": "pri",
         "body": [
             "private function ${1:FunctionName}() {",
             "   ",
@@ -74,6 +74,36 @@
         "prefix": "lb",
         "body": [
             "\\$this->load->library('${1:LibraryName}');"
+        ]
+    },
+    "Generate Data Migration": {
+        "scope": "html",
+        "prefix": "mig",
+        "body": [
+            "<?php",
+            "defined('BASEPATH') OR exit('No direct script access allowed');",
+            "",
+            "class Migration_${1:tb_FileName} extends CI_Migration {",
+            "",
+            "   public function up() {",
+            "       \\$this->dbforge->add_field(array(",
+            "               '${2:PrimaryKey}' => array(",
+            "                   'type' => 'INT',",
+            "                   'constraint' => 5,",
+            "                   'unsigned' => TRUE,",
+            "                   'auto_increment' => TRUE",
+            "               ),",
+            "       ));",
+            "       \\$this->dbforge->add_key('${2:PrimaryKey}', TRUE);",
+            "       \\$this->dbforge->create_table('${3:TableName}');",
+            "   }",
+            "",
+            "   public function down() {",
+            "       \\$this->dbforge->drop_table('${3:TableName}');",
+            "   }",
+            "",
+            "}",
+            "?>",
         ]
     }
 }
